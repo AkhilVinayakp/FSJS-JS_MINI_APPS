@@ -17,6 +17,7 @@ const randomFunc = {
 clipboardEl.addEventListener('click', () => {
     // event to copy the content to the clipboard
     navigator.clipboard.writeText(resultEl.textContent);
+    resultEl.style.backgroundColor = "red";
 })
 
 generateEl.addEventListener('click', () => {
@@ -42,6 +43,10 @@ function generatePassword(lower, upper, number, symbol, length) {
     }
     if(symbol){
         choosen_list.push("symbol");
+    }
+    if(choosen_list.length <= 0){
+        alert("please choose options setting to default");
+        lowercaseEl.checked = true;
     }
     let fns = Object.keys(randomFunc);
     while(new_password.length <= length){
