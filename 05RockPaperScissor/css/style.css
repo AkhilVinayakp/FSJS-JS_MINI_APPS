@@ -67,6 +67,8 @@ body{
     text-align: center;
     margin: 1vmin auto 3vmin auto;
     font-size: 2em;
+    width: 450px;
+    height: 300px;
 }
 
 #result-final-stat{
@@ -100,4 +102,15 @@ body{
 
 .name{
     color: #e7e3ff;
+}
+
+.choice-err{
+    background-color: #f75555;
+    border: 2px solid #47030f;
+
+
+}
+
+.hidden {
+    display: none;
 }
