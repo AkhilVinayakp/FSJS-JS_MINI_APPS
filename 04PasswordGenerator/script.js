@@ -26,7 +26,11 @@ generateEl.addEventListener('click', () => {
     const number = numbersEl.checked;
     const symbol = symbolsEl.checked;
     const length = lengthEl.value;
-    resultEl.textContent = generatePassword(lower, upper, number, symbol, length)
+    const arr =  [lower, upper, number, symbol];
+    if(!(arr.some(ele => ele))){
+        alert("Please choose atleast one to proceed");
+    }
+    else resultEl.textContent = generatePassword(lower, upper, number, symbol, length)
 })
 
 function generatePassword(lower, upper, number, symbol, length) {
@@ -43,10 +47,6 @@ function generatePassword(lower, upper, number, symbol, length) {
     }
     if(symbol){
         choosen_list.push("symbol");
-    }
-    if(choosen_list.length <= 0){
-        alert("please choose options setting to default");
-        lowercaseEl.checked = true;
     }
     let fns = Object.keys(randomFunc);
     while(new_password.length <= length){
