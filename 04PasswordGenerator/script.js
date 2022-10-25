@@ -28,7 +28,8 @@ generateEl.addEventListener('click', () => {
     const length = lengthEl.value;
     const arr =  [lower, upper, number, symbol];
     if(!(arr.some(ele => ele))){
-        alert("Please choose atleast one to proceed");
+        alert("Please choose atleast one to proceed setting default to lower case");
+        lowercaseEl.checked = true;
     }
     else resultEl.textContent = generatePassword(lower, upper, number, symbol, length)
 })
